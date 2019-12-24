@@ -27,6 +27,7 @@ CREATE TABLE `employee` (
   `name` varchar(127) NOT NULL COMMENT 'Name',
   `info` varchar(1023) DEFAULT NULL COMMENT 'Information about employee',
   `dob` date DEFAULT NULL COMMENT 'Date of Birth',
+  `lastname` varchar(63) DEFAULT NULL COMMENT 'Lastname of employee',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Employees';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,7 +38,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'Mike',NULL,'1997-01-20'),(2,'John',NULL,'1956-05-23'),(3,'Galyna',NULL,'1987-07-01'),(4,'Petro',NULL,'2001-12-23'),(5,'Nikolay',NULL,'1974-02-28'),(6,'Tiger',NULL,'1998-01-20'),(7,'Inna',NULL,'1957-05-23'),(8,'Aleksandr',NULL,'1988-07-01'),(9,'Petro Dyzi',NULL,'2000-12-23'),(10,'Nikolay Kyzimin',NULL,'1975-02-28');
+INSERT INTO `employee` VALUES (1,'Mike',NULL,'1997-01-20','Khrypko'),(2,'John',NULL,'1956-05-23',NULL),(3,'Galyna',NULL,'1987-07-01',NULL),(4,'Petro',NULL,'2001-12-23',NULL),(5,'Nikolay',NULL,'1974-02-28',NULL),(6,'Tiger',NULL,'1998-01-20',NULL),(7,'Inna',NULL,'1957-05-23',NULL),(8,'Aleksandr',NULL,'1988-07-01',NULL),(9,'Petro Dyzi',NULL,'2000-12-23','Dyzi'),(10,'Nikolay Kyzimin',NULL,'1975-02-28','Kyzimin');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +69,7 @@ CREATE TABLE `employees_position_time` (
 
 LOCK TABLES `employees_position_time` WRITE;
 /*!40000 ALTER TABLE `employees_position_time` DISABLE KEYS */;
-INSERT INTO `employees_position_time` VALUES (7,'2005-01-01','2005-05-31',4,2),(8,'2005-01-01','2005-05-31',1,10),(9,'2005-01-01','2005-05-31',2,7),(10,'2005-01-01','2005-01-31',2,3),(11,'2005-02-01','2005-02-28',3,4),(12,'2005-03-01','2005-05-31',1,4);
+INSERT INTO `employees_position_time` VALUES (7,'2005-01-01','2005-05-31',4,2),(8,'2005-01-01','2005-05-31',1,10),(9,'2005-01-01','2005-05-31',2,7),(10,'2005-01-01','2005-01-31',2,3),(11,'2005-02-01','2007-02-28',3,4),(12,'2005-03-01','2005-05-31',1,4);
 /*!40000 ALTER TABLE `employees_position_time` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +180,7 @@ CREATE TABLE `transport_accounting` (
 
 LOCK TABLES `transport_accounting` WRITE;
 /*!40000 ALTER TABLE `transport_accounting` DISABLE KEYS */;
-INSERT INTO `transport_accounting` VALUES (1,'2005-01-01',280,8,1),(2,'2005-01-02',280,8,1),(3,'2005-01-03',280,8,1),(4,'2005-01-04',280,8,1),(5,'2005-01-05',280,8,1),(6,'2005-01-06',280,8,1),(7,'2005-01-07',280,8,1),(8,'2005-01-08',280,8,1),(9,'2005-01-09',280,8,1),(10,'2005-01-10',280,8,1),(11,'2005-01-11',280,8,1),(12,'2005-01-12',280,8,1),(13,'2005-01-13',280,8,1),(14,'2005-01-14',280,8,1),(15,'2005-01-15',280,8,1),(16,'2005-01-16',280,8,1),(17,'2005-01-17',280,8,2),(18,'2005-01-18',280,8,1),(19,'2005-01-19',280,8,1),(20,'2005-01-20',280,8,1),(21,'2005-01-21',280,8,1),(22,'2005-01-22',280,8,1),(23,'2005-01-23',280,8,1),(24,'2005-01-24',280,8,1),(25,'2005-01-25',280,8,2),(26,'2005-01-26',280,8,6),(27,'2005-01-27',280,8,3),(28,'2005-01-28',280,8,4),(29,'2005-01-01',280,12,3),(30,'2005-01-02',280,12,4),(31,'2005-01-03',280,12,3);
+INSERT INTO `transport_accounting` VALUES (1,'2005-01-01',280,8,1),(2,'2005-01-02',280,8,1),(3,'2005-01-03',280,8,1),(4,'2005-01-04',280,8,1),(5,'2005-01-05',280,8,1),(6,'2005-01-06',280,8,1),(7,'2005-01-07',280,8,1),(8,'2005-01-08',280,8,1),(9,'2005-01-09',280,8,1),(10,'2005-01-10',280,8,1),(11,'2005-01-11',280,8,1),(12,'2005-01-12',280,8,1),(13,'2005-01-13',280,8,1),(14,'2005-01-14',280,8,1),(15,'2005-01-15',280,8,1),(16,'2005-01-16',280,8,1),(17,'2005-01-17',280,8,2),(18,'2005-01-18',280,8,1),(19,'2005-01-19',280,8,1),(20,'2005-01-20',280,8,1),(21,'2005-01-21',280,8,1),(22,'2005-01-22',280,8,1),(23,'2005-01-23',280,8,1),(24,'2005-01-24',280,8,1),(25,'2005-01-25',280,8,2),(26,'2005-01-26',280,8,6),(27,'2005-01-27',280,8,3),(28,'2005-01-28',280,8,4),(29,'2005-01-01',300,12,3),(30,'2005-01-02',280,12,4),(31,'2005-01-03',280,12,3);
 /*!40000 ALTER TABLE `transport_accounting` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -192,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-23 14:22:02
+-- Dump completed on 2019-12-24 11:10:32
