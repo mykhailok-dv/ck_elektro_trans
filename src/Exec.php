@@ -26,19 +26,19 @@ class Exec
      */
     protected function clean(): bool
     {
-        (new FixturesQuery())->cleanup();
+        (new Fixtures())->cleanup();
         return true;
     }
 
     protected function createIndexes(): bool
     {
-        (new FixturesQuery())->createIndexes();
+        (new Fixtures())->createIndexes();
         return true;
     }
 
     protected function dropIndexes(): bool
     {
-        (new FixturesQuery())->dropIndexes();
+        (new Fixtures())->dropIndexes();
         return true;
     }
 
